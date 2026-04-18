@@ -35,27 +35,44 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <?php include 'includes/header.php'; ?>
 
-<h1>Register</h1>
-<?php if ($error): ?>
-    <p class="error"><?= htmlspecialchars($error) ?></p>
-<?php endif; ?>
+<section class="auth-layout">
+    <aside class="auth-banner">
+        <p class="auth-kicker">Join the community</p>
+        <h1>Create your account and start publishing ideas.</h1>
+        <p>
+            Build a writing presence, open discussions, and make your forum a standout portfolio project for clients.
+        </p>
+        <ul>
+            <li>Create posts in your favorite categories</li>
+            <li>Get feedback through meaningful comments</li>
+            <li>Show a real product in your freelance portfolio</li>
+        </ul>
+    </aside>
 
-<form method="POST">
-    <label>Username:</label>
-    <input type="text" name="username" placeholder="Username" required>
+    <div class="auth-panel">
+        <h2>Register</h2>
+        <?php if ($error): ?>
+            <p class="error"><?= htmlspecialchars($error) ?></p>
+        <?php endif; ?>
 
-    <label>Email:</label>
-    <input type="email" name="email" placeholder="Email" required>
+        <form method="POST">
+            <label>Username:</label>
+            <input type="text" name="username" placeholder="Username" required>
 
-    <label>Password:</label>
-    <input type="password" name="password" placeholder="Password" required>
+            <label>Email:</label>
+            <input type="email" name="email" placeholder="Email" required>
 
-    <label>Confirm Password:</label>
-    <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+            <label>Password:</label>
+            <input type="password" name="password" placeholder="Password" required>
 
-    <button type="submit">Register</button>
-</form>
+            <label>Confirm Password:</label>
+            <input type="password" name="confirm_password" placeholder="Confirm Password" required>
 
-<p>Already have an account? <a href="login.php">Login here</a>.</p>
+            <button type="submit">Register</button>
+        </form>
+
+        <p>Already have an account? <a href="login.php">Login here</a>.</p>
+    </div>
+</section>
 
 <?php include 'includes/footer.php'; ?>

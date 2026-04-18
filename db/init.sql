@@ -17,6 +17,7 @@ CREATE TABLE posts (
     category_id INT NOT NULL,
     title VARCHAR(255) NOT NULL,
     body TEXT NOT NULL,
+    image_path VARCHAR(255) NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES users(id),
     FOREIGN KEY (category_id) REFERENCES categories(id)

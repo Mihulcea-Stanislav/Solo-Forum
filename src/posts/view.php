@@ -63,6 +63,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <div class="container">
     <div class="post-full">
+        <?php if (!empty($post['image_path'])): ?>
+            <img class="post-hero-image" src="<?= htmlspecialchars($post['image_path']) ?>" alt="Post image">
+        <?php endif; ?>
         <div class="post-meta">
             <span class="category"><?= htmlspecialchars($post['category_name'] ?? 'Uncategorized') ?></span>
             <span>by <strong><?= htmlspecialchars($post['username']) ?></strong></span>
@@ -110,9 +113,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </form>
         </div>
     <?php else: ?>
-        <p>
-            <a href="/login.php">Login</a> to leave a comment
-        </p>
+        <div class="comment-login-cta">
+            <h3>Join the discussion</h3>
+            <p>Log in to share your opinion and leave a comment on this post.</p>
+            <a href="/login.php" class="btn btn-primary">Login to Comment</a>
+        </div>
     <?php endif; ?>
 
 </div>

@@ -9,7 +9,12 @@
 <body>
     <header>
         <nav>
-            <a href="/">Solo Forum</a>
+            <a href="/" class="brand">
+                <span class="brand-mark" aria-hidden="true"></span>
+                <span class="brand-text">
+                    <strong>SoloForum</strong>
+                </span>
+            </a>
             <div>
                 <?php if (isset($_SESSION['user_id'])): ?>
                     <span>Hello, <?= htmlspecialchars($_SESSION['username']) ?></span>

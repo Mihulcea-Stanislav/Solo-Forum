@@ -20,6 +20,14 @@ $posts = $stmt->fetchAll();
 <?php include 'includes/header.php'; ?>
 
 <div class="container">
+    <section class="hero">
+        <p class="hero-kicker">Community-driven discussions</p>
+        <h1>Build your perspective in public.</h1>
+        <p>
+            A clean place to post bold ideas, read thoughtful replies, and connect with creators.
+        </p>
+    </section>
+
     <div class="filters">
         <a href="/" class="<?= !$category_id ? 'active' : '' ?>">All Posts</a>
         <?php foreach ($categories as $cat): ?>
@@ -36,6 +44,9 @@ $posts = $stmt->fetchAll();
     <?php else: ?>
         <?php foreach ($posts as $post): ?>
             <div class="post-card">
+                <?php if (!empty($post['image_path'])): ?>
+                    <img class="post-cover" src="<?= htmlspecialchars($post['image_path']) ?>" alt="Post cover image">
+                <?php endif; ?>
                 <div class='post-meta'>
                     <span class="category"><?= htmlspecialchars($post['category_name'] ?? 'Uncategorized') ?></span>
                     <span>by <?= htmlspecialchars($post['username']) ?></span>
